@@ -3,7 +3,22 @@ export interface Props {
 	title: string;
 }
 
+import styles from '../../../Verss/app/assets/palette.js'
+// console.log(styles.PRIMARY_COLOUR_RAW)
 const { title } = Astro.props;
+
+const PRIMARY_COLOUR = styles.PRIMARY_COLOUR
+const PRIMARY_COLOUR_RAW = styles.PRIMARY_COLOUR_RAW
+const PRIMARY_COLOUR_CONTRAST = styles.PRIMARY_COLOUR_CONTRAST
+
+const SECONDARY_COLOUR = styles.SECONDARY_COLOUR
+const SECONDARY_COLOUR_CONTRAST = styles.SECONDARY_COLOUR_CONTRAST
+
+const TERTIARY_COLOUR = styles.TERTIARY_COLOUR
+const TERTIARY_COLOUR_CONTRAST = styles.TERTIARY_COLOUR_CONTRAST
+
+const TERTIARY_COLOUR_50 = styles.TERTIARY_COLOUR_50
+const TERTIARY_COLOUR_50_TRANS = styles.TERTIARY_COLOUR_50_TRANS
 ---
 
 <!DOCTYPE html>
@@ -20,14 +35,26 @@ const { title } = Astro.props;
 		<slot />
 	</body>
 </html>
-<style is:global>
+<style is:global define:vars={{
+	PRIMARY_COLOUR,
+	PRIMARY_COLOUR_CONTRAST,
+	SECONDARY_COLOUR,
+	SECONDARY_COLOUR_CONTRAST,
+	TERTIARY_COLOUR,
+	TERTIARY_COLOUR_CONTRAST,
+	TERTIARY_COLOUR_50,
+	TERTIARY_COLOUR_50_TRANS
+	}}>
 	:root {
 		--accent: 124, 58, 237;
 		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+		--SECONDARY_TO_PRIMARY_GRAD: linear-gradient(45deg, var(--SECONDARY_COLOUR), var(--PRIMARY_COLOUR),white 60%);
+		caret-color: transparent;
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
+		/* background-color: #F6F6F6; */
+		background-color: var(--SECONDARY_COLOUR);
 	}
 	code {
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
