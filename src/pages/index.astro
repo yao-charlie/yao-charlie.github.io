@@ -2,38 +2,54 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import logo from '../../../Verss/app/assets/adaptive-icon.png'
+import PortraitIndex from '../components/PortraitIndex.astro';
 
 ---
 
 <Layout title="Welcome to Verss">
+	<!-- #example1 {
+		background-image: url(img_flwr.gif), url(paper.gif);
+		background-position: right bottom, left top;
+		background-repeat: no-repeat, repeat;
+	  } -->
 	<main>
-		<img src={logo} class = logo alt="Welcome to Verss"/>
-		<h1>Welcome to Verss</h1>
-		<p class="instructions">
-			Looking for more than just a swipe? Say hello to Verss, the social media app that goes beyond superficial profiles and embraces the power of authentic communication.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href=""
-				title="How it works"
-				body="Tired of being described by an algorithm? Go back to the basics."
-			/>
-			<Card
-				href="/philosophy/"
-				title="Our philosophy"
-				body="How do you build meaningful conections?"
-			/>
-			<Card
-				href="/privacy/"
-				title="Privacy"
-				body="Our privacy policy."
-			/>
-			<Card
-				href="/support/"
-				title="Support"
-				body="Contact us for support or feedback."
-			/>
-		</ul>
+		<div>
+			<img src={logo} class = logo alt="Welcome to Verss"/>
+			<h1>Welcome to Verss</h1>
+			<p class="instructions">
+				Looking for more than just a swipe? Say hello to Verss, the social media app that goes beyond superficial profiles and embraces the power of authentic communication.
+			</p>
+			<ul role="list" class="link-card-grid">
+				<Card
+					href=""
+					title="How it works"
+					body="Tired of being described by an algorithm? Go back to the basics."
+				/>
+				<Card
+					href="/philosophy/"
+					title="Our philosophy"
+					body="How do you build meaningful conections?"
+				/>
+				<Card
+					href="/privacy/"
+					title="Privacy"
+					body="Our privacy policy."
+				/>
+				<Card
+					href="/support/"
+					title="Support"
+					body="Contact us for support or feedback."
+				/>
+			</ul>
+		</div>
+		<div class="backgroundImage">
+			<PortraitIndex
+				imageSrc="https://source.unsplash.com/random/900x1600&1"
+				/>
+			<PortraitIndex
+				imageSrc="https://source.unsplash.com/random/900x1600&2"
+				/>
+		</div>
 	</main>
 </Layout>
 
@@ -42,6 +58,10 @@ import logo from '../../../Verss/app/assets/adaptive-icon.png'
 		margin: auto;
 		padding: 1.5rem;
 		max-width: 60ch;
+	}
+	backgroundImage {
+		position: absolute;
+		margin: 0;
 	}
 	h1 {
 		font-size: 3rem;
