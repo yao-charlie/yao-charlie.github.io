@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import logo from '../../../Verss/app/assets/adaptive-icon.png'
+
+---
+
+<Layout title="How it Works">
+	<main>
+		<img src={logo} class = logo alt="Welcome to Verss"/>
+		<h1>How it Works</h1>
+		<ol class="instructions">
+			<li>Download the app</li>
+			<!-- <li>Record yourself</li> -->
+			<li>Complete your profile</li>
+			<!-- <li>Pick an interesting question</li> -->
+			<li>Watch others and connect!</li>
+
+			Let us do the rest!
+		</ol>
+		<!-- <ul role="list" class="link-card-grid">
+			<Card
+				href=""
+				title="How it works"
+				body="Tired of being described by an algorithm? Go back to the basics."
+			/>
+			<Card
+				href=""
+				title="Our philosophy"
+				body="How do you build meaningful conections?"
+			/> -->
+		</ul>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 500;
+		margin: 0;
+		text-align: center;
+		color:var(--SECONDARY_COLOUR_CONTRAST);
+	}
+	.logo{
+		width: 100%;
+		margin-bottom: -20%;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		padding-left: 5rem ;
+		border-radius: 0.4rem;
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 1rem;
+		padding: 0;
+	}
+</style>
