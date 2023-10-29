@@ -17,6 +17,6 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "astro": "^2.10.14"
+    "astro": "^2.10.15"
   }
 }
