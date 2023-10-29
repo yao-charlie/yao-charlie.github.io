@@ -7,7 +7,7 @@ export default defineConfig({
   integrations: [react()],
   site: 'https://yao-charlie.github.io',
   output: 'static',
-  outDir: './docs',
+  outDir: './build',
   build: {
     assets: 'astro'
   }
